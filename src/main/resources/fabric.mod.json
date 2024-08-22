@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "skylinestats",
+  "version": "${version}",
+  "name": "SkylineStats",
+  "description": "A mod that shows your SkylineMC stats on your Discord presence.",
+  "authors": [],
+  "contact": {},
+  "license": "Apache-2.0",
+  "icon": "assets/skylinestats/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.skylinemc.skylinemc.client.SkylineStatsClient"
+    ],
+    "main": [
+      "net.skylinemc.skylinemc.SkylineStats"
+    ]
+  },
+  "mixins": [
+    "skylinestats.mixins.json",
+    {
+      "config": "skylinestats.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
